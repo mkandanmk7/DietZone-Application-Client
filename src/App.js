@@ -4,11 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PassLinkVerify from "./Pages/PassLinkVerify";
 import { RegisterUser } from "./Pages/RegisterUser";
 import Login from "./Pages/Login";
+import DietHome from "./Components/DietHome";
 
-const privateRoute = ({ path, component: Component }) => {
+const privateRoute = ({ path, component: element }) => {
   const authtoken = localStorage.getItem("authtoken");
 
-  return authtoken ? <Component /> : <h1>Login!!!</h1>;
+  return authtoken ? <element /> : <h1>Login!!!</h1>;
 };
 
 const ConditionalRoute = ({ path, component: element }) => {
@@ -41,6 +42,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<RegisterUser />} />
+          <Route
+            path="/diethome"
+            element={
+              <privateRoute>
+                <DietHome />
+              </privateRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

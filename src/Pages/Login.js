@@ -4,9 +4,9 @@ import { MdEmail } from "react-icons/md";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 import "./Register.css";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { DotLoader } from "react-spinners";
+import authaxios from "../Axios";
 
 const Login = () => {
   const [showpassword, Setshowpassward] = useState(false);
@@ -21,13 +21,10 @@ const Login = () => {
   let loginUser = async ({ email, password }) => {
     try {
       Setload(true);
-      const { data } = await axios.post(
-        "https://dietapp437.herokuapp.com/users/loginUser",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const { data } = await authaxios.post("/users/loginUser", {
+        email: email,
+        password: password,
+      });
       Setload(false);
       setdata(data);
       if (data.authtoken) {
