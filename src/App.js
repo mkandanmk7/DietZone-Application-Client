@@ -10,6 +10,7 @@ import PassLinkVerify from "./Pages/PassLinkVerify";
 import PassReset from "./Pages/PassReset";
 import Navbar from "./Components/Navbar";
 import Userdetails from "./Components/Userdetails";
+import UserInfo from "./Components/UserInfo";
 // import Addfood from "./Components/Addfood";
 // import Recipe from "./Components/Recipe";
 // import UserInfo from "./Components/UserInfo";
@@ -65,9 +66,10 @@ function App() {
           {/* <Route path="/forgotpassword" component={ForgotPassword} /> */}
           <PrivateRoute path="/diethome" component={DietHome} />
           <PrivateRoute path="/userdetails" component={Userdetails} />
+          <PrivateRoute path="/UserInfo" component={UserInfo} />
           {/* <PrivateRoute path="/addfood" component={Addfood} />
           <PrivateRoute path="/recipe" component={Recipe} />
-          <PrivateRoute path="/UserInfo" component={UserInfo} />
+        
           <PrivateRoute path="/track" component={Track} /> */}
         </Switch>
       </BrowserRouter>

@@ -110,7 +110,6 @@ const DietHome = () => {
                 <h1>
                   {userState.userName}{" "}
                   <Link className=" btn btn-outline-light" to="/UserInfo">
-                    {" "}
                     <FaUserCog />
                   </Link>
                 </h1>
@@ -166,7 +165,6 @@ const DietHome = () => {
                       updateWater("plus");
                     }}
                   >
-                    {" "}
                     <AiFillPlusCircle />{" "}
                   </button>
                 </div>
