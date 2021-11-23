@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Pages/Register.css";
 import LoginUser from "./Pages/Login";
-import Verifyuser from "./Pages/VerifyUser";
 import DietHome from "./Components/DietHome";
 import ForgotPassword from "./Pages/ForgotPassword";
 import PassLinkVerify from "./Pages/PassLinkVerify";
@@ -14,10 +13,7 @@ import UserInfo from "./Components/UserInfo";
 import Addfood from "./Components/Addfood";
 import Track from "./Components/Track";
 import Recipe from "./Components/Recipe";
-// import Addfood from "./Components/Addfood";
-// import Recipe from "./Components/Recipe";
-// import UserInfo from "./Components/UserInfo";
-// import Track from "./Components/Track";
+import Verifyuser from "./Pages/VerifyUser";
 
 function PrivateRoute({ path, component: Component }) {
   return (
@@ -55,13 +51,13 @@ function App() {
     <>
       <BrowserRouter>
         <Switch>
-          {/* <Route
+          <Route
             path="/passverifylink/:userId/:token"
             component={PassLinkVerify}
           />
           <Route path="/resetpassword/:userId/:token" component={PassReset} />
           <Route path="/verifyuser/:id" component={Verifyuser} />
-          */}
+
           <ConditionalRoute path="/" component={Navbar} />
         </Switch>
         <Switch>

@@ -2,7 +2,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { MdEmail } from "react-icons/md";
 import { useState, useEffect } from "react";
 import "./Register.css";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { DotLoader } from "react-spinners";
 import authaxios from "../Axios";
@@ -13,6 +12,7 @@ export default function ForgotPassword(props) {
   const [load, Setload] = useState(false);
   // eslint-disable-next-line no-useless-escape
   const validateEmail =
+    // eslint-disable-next-line no-useless-escape
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   useEffect(() => {
