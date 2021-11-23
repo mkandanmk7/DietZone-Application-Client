@@ -1,56 +1,75 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PassLinkVerify from "./Pages/PassLinkVerify";
 import { RegisterUser } from "./Pages/RegisterUser";
-import Login from "./Pages/Login";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Pages/Register.css";
+import LoginUser from "./Pages/Login";
+import Verifyuser from "./Pages/VerifyUser";
 import DietHome from "./Components/DietHome";
+import ForgotPassword from "./Pages/ForgotPassword";
+import PassLinkVerify from "./Pages/PassLinkVerify";
+import PassReset from "./Pages/PassReset";
+import Navbar from "./Components/Navbar";
+import Userdetails from "./Components/Userdetails";
+// import Addfood from "./Components/Addfood";
+// import Recipe from "./Components/Recipe";
+// import UserInfo from "./Components/UserInfo";
+// import Track from "./Components/Track";
 
-const privateRoute = ({ path, component: element }) => {
-  const authtoken = localStorage.getItem("authtoken");
+function PrivateRoute({ path, component: Component }) {
+  return (
+    <Route
+      path={path}
+      render={() => {
+        const authtoken = localStorage.getItem("authtoken");
 
-  return authtoken ? <element /> : <h1>Login!!!</h1>;
-};
+        return authtoken ? <Component /> : <h1>Login!!!</h1>;
+      }}
+    />
+  );
+}
 
-const ConditionalRoute = ({ path, component: element }) => {
+function ConditionalRoute({ path, component: Component }) {
   return (
     <Route
       path={path}
       render={({ location }) => {
         return location.pathname === "/" ||
           location.pathname === "/register" ||
+          location.pathname === "/forgotpassword" ||
           location.pathname === "/userdetails" ? (
           <></>
         ) : (
-          <element />
+          <Component />
         );
       }}
     />
   );
-};
+}
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route
+        <Switch>
+          {/* <Route
             path="/passverifylink/:userId/:token"
-            element={<PassLinkVerify />}
+            component={PassLinkVerify}
           />
-        </Routes>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<RegisterUser />} />
-          <Route
-            path="/diethome"
-            element={
-              <privateRoute>
-                <DietHome />
-              </privateRoute>
-            }
-          />
-        </Routes>
+          <Route path="/resetpassword/:userId/:token" component={PassReset} />
+          <Route path="/verifyuser/:id" component={Verifyuser} />
+          <ConditionalRoute path="/" component={Navbar} /> */}
+        </Switch>
+        <Switch>
+          <Route exact path="/" component={LoginUser} />
+          <Route path="/register" component={RegisterUser} />
+          {/* <Route path="/forgotpassword" component={ForgotPassword} /> */}
+          <PrivateRoute path="/diethome" component={DietHome} />
+          <PrivateRoute path="/userdetails" component={Userdetails} />
+          {/* <PrivateRoute path="/addfood" component={Addfood} />
+          <PrivateRoute path="/recipe" component={Recipe} />
+          <PrivateRoute path="/UserInfo" component={UserInfo} />
+          <PrivateRoute path="/track" component={Track} /> */}
+        </Switch>
       </BrowserRouter>
     </>
   );

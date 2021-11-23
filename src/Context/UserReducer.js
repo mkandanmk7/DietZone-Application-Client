@@ -2,7 +2,7 @@ export const GETDATA = "GETDATA";
 export const PUTDATA = "PUTWATER";
 export const CHANGEUSER = "CHANGEUSER";
 
-const UserReducer = (state, action) => {
+function UserReducer(state, action) {
   switch (action.type) {
     case GETDATA: {
       return { ...action.payload };
@@ -21,6 +21,6 @@ const UserReducer = (state, action) => {
       break;
     }
   }
-};
+}
 
 export default UserReducer;

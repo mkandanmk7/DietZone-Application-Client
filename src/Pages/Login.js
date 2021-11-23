@@ -4,13 +4,14 @@ import { MdEmail } from "react-icons/md";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 import "./Register.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+
 import { DotLoader } from "react-spinners";
 import authaxios from "../Axios";
 
 const Login = () => {
   const [showpassword, Setshowpassward] = useState(false);
-  const history = useNavigate();
+  const history = useHistory();
   const [data, setdata] = useState({});
   const [load, Setload] = useState(false);
 
@@ -29,7 +30,7 @@ const Login = () => {
       setdata(data);
       if (data.authtoken) {
         localStorage.setItem("authtoken", data.authtoken);
-        history("/diethome");
+        history.push("/diethome");
       }
     } catch (err) {
       console.log(err);

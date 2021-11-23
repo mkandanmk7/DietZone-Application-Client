@@ -1,12 +1,10 @@
-import { useReducer } from "react";
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 import UserReducer from "./UserReducer";
 
 export const UserContext = createContext();
 
-export const UserContextFunc = ({ children }) => {
+function UserContextFunc({ children }) {
   const initialState = {};
-
   const [userState, dispatch] = useReducer(UserReducer, initialState);
 
   return (
@@ -14,4 +12,5 @@ export const UserContextFunc = ({ children }) => {
       {children}
     </UserContext.Provider>
   );
-};
+}
+export default UserContextFunc;

@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import UserContextFunc from "./Context/UserContext";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <UserContextFunc>
     <App />
-  </React.StrictMode>,
+  </UserContextFunc>,
   document.getElementById("root")
 );
