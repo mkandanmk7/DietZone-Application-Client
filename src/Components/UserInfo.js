@@ -14,6 +14,7 @@ import { SyncLoader } from "react-spinners";
 const UserInfo = () => {
   // eslint-disable-next-line no-useless-escape
   const validateEmail =
+    // eslint-disable-next-line no-useless-escape
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   const history = useHistory();
   const { userState, dispatch } = useContext(UserContext);

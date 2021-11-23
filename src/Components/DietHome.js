@@ -134,6 +134,46 @@ const DietHome = () => {
             </div>
           )}
         </InView>
+        <InView threshold={0.5}>
+          {({ ref, inView }) => (
+            <div className="food" ref={ref}>
+              <div className="circle bg-success">
+                <p>
+                  {Math.trunc(
+                    (userState.calories / userState.caloriesNeed) * 100
+                  )}{" "}
+                  %
+                </p>
+                <div
+                  className={inView ? "circle-float" : "circle-float-static"}
+                ></div>
+              </div>
+              <div className="addfood">
+                <p className="bold">Better food, Better Mood!!</p>
+                <div className="progress">
+                  <div
+                    className="progress-bar"
+                    style={{
+                      width: `${Math.trunc(
+                        (userState.calories / userState.caloriesNeed) * 100
+                      )}%`,
+                    }}
+                  >
+                    {Math.trunc(
+                      (userState.calories / userState.caloriesNeed) * 100
+                    )}
+                    %
+                  </div>
+                </div>
+                <div>
+                  <Link to="/addfood" className="btn btn-danger">
+                    Add Food
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </InView>
         <InView threshold={0.6}>
           {({ ref, inView }) => (
             <div className="food water" ref={ref}>

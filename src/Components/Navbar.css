@@ -1,26 +1,40 @@
+.navbar {
+  background-color: rgb(3, 133, 89);
+  height: 50px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.nav-link,
+.navbar-brand {
+  font-size: 30px;
 
-.navbar{
-   /* background-color: rgb(3, 133, 89);*/
-    height:70px;
-}
-.nav-link,.navbar-brand{
-    font-size: 30px;
-    /*color:rgb(0, 75, 34);*/
-    color:rgb(0, 0, 0);
-  
+  /*color:rgb(0, 75, 34);*/
+  color: rgb(197, 182, 182);
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.icons,.nav-link:hover{
-   /* color:rgb(255, 255, 255);*/
-    color:rgb(243, 243, 243);
-    background-color: rgb(69, 170, 114);
-    border-radius: 300px; 
-    text-align: center;
-   
+.icons,
+.nav-link:hover {
+  /* color:rgb(255, 255, 255);*/
+  color: rgb(243, 243, 243);
+
+  height: 60px;
+  background-color: rgb(69, 170, 114);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  text-align: center;
 }
-.nav-link{
-    margin-left: 5px;
+.nav-link {
+  margin-left: 5px;
 }
-.navbar-nav{
-    margin-left: auto;
+.navbar-nav {
+  margin-left: auto;
 }

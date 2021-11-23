@@ -11,6 +11,7 @@ import PassReset from "./Pages/PassReset";
 import Navbar from "./Components/Navbar";
 import Userdetails from "./Components/Userdetails";
 import UserInfo from "./Components/UserInfo";
+import Addfood from "./Components/Addfood";
 // import Addfood from "./Components/Addfood";
 // import Recipe from "./Components/Recipe";
 // import UserInfo from "./Components/UserInfo";
@@ -58,7 +59,8 @@ function App() {
           />
           <Route path="/resetpassword/:userId/:token" component={PassReset} />
           <Route path="/verifyuser/:id" component={Verifyuser} />
-          <ConditionalRoute path="/" component={Navbar} /> */}
+          */}
+          <ConditionalRoute path="/" component={Navbar} />
         </Switch>
         <Switch>
           <Route exact path="/" component={LoginUser} />
@@ -67,8 +69,8 @@ function App() {
           <PrivateRoute path="/diethome" component={DietHome} />
           <PrivateRoute path="/userdetails" component={Userdetails} />
           <PrivateRoute path="/UserInfo" component={UserInfo} />
-          {/* <PrivateRoute path="/addfood" component={Addfood} />
-          <PrivateRoute path="/recipe" component={Recipe} />
+          <PrivateRoute path="/addfood" component={Addfood} />
+          {/* <PrivateRoute path="/recipe" component={Recipe} />
         
           <PrivateRoute path="/track" component={Track} /> */}
         </Switch>
