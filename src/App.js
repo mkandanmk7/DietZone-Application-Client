@@ -67,7 +67,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LoginUser} />
           <Route path="/register" component={RegisterUser} />
-          {/* <Route path="/forgotpassword" component={ForgotPassword} /> */}
+          <Route path="/forgotpassword" component={ForgotPassword} />
           <PrivateRoute path="/diethome" component={DietHome} />
           <PrivateRoute path="/userdetails" component={Userdetails} />
           <PrivateRoute path="/UserInfo" component={UserInfo} />
