@@ -44,6 +44,7 @@ const DietHome = () => {
       const { data } = await authaxios.get("/userInfo", {
         headers: { authtoken: localStorage.getItem("authtoken") },
       });
+      console.log("userinfo", data);
 
       if (!data) {
         history.push("/userdetails");
@@ -97,12 +98,12 @@ const DietHome = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="welcome">
+        {/* <div className="welcome">
           <div className="circle welcircle">
             <p>Welcome</p>
             <div className="circle-float"></div>
           </div>
-        </div>
+        </div> */}
         <InView threshold={0.5}>
           {({ ref, inView }) => (
             <div className="userdiv" ref={ref}>

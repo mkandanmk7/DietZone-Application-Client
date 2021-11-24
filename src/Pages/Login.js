@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Register.css";
 import { Link, useHistory } from "react-router-dom";
 
@@ -37,6 +37,10 @@ const Login = () => {
       Setload(false);
     }
   };
+  useEffect(() => {
+    localStorage.getItem("authtoken") && localStorage.removeItem("authtoken");
+    localStorage.getItem("userstate") && localStorage.removeItem("userstate");
+  }, []);
   return (
     <>
       <div className="re">

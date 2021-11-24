@@ -7,13 +7,14 @@ import { UserContext } from "../Context/UserContext";
 import { useContext, useState } from "react";
 import { PUTDATA } from "../Context/UserReducer";
 import { SyncLoader } from "react-spinners";
-import UserInfo from "./UserInfo";
+// import userinfo from "./userinfo";
 
-const Userdetails = () => {
+const Userdetails = ({ userinfo }) => {
   const decimal = /^[1-9]\d*(\.\d+)?$/;
   const integer = /^[1-9]\d*$/;
   const history = useHistory();
   const { userState, dispatch } = useContext(UserContext);
+
   const [load, setload] = useState(false);
 
   //to create user info at first time
@@ -81,7 +82,7 @@ const Userdetails = () => {
   };
   return (
     <>
-      <div className={UserInfo ? "no" : "re"}>
+      <div className={userinfo ? "no" : "re"}>
         <Formik
           initialValues={{
             height: userState.height ? userState.height : "",
@@ -123,7 +124,7 @@ const Userdetails = () => {
           }}
           onSubmit={(values) => {
             //if user exists the change plan or create a plan
-            UserInfo ? changeplan(values) : postuser(values);
+            userinfo ? changeplan(values) : postuser(values);
           }}
           enableReinitialize
         >
