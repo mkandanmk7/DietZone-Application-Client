@@ -109,6 +109,9 @@ const DietHome = () => {
             <div className="userdiv" ref={ref}>
               <div id="userdetails">
                 <h1>
+                  <span className="text-danger mx-3 font-weight-bold">
+                    Welcome
+                  </span>
                   {userState.userName}{" "}
                   <Link className=" btn btn-outline-light" to="/UserInfo">
                     <FaUserCog />

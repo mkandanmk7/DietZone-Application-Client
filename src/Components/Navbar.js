@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { GiBowlOfRice } from "react-icons/gi";
 import { RiLogoutBoxFill } from "react-icons/ri";
@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <>
       <nav className="navbar navbar-expand fixed-top">
-        <div className="navbar-brand">Diet Zone</div>
+        <Link to="/diethome">
+          <div className="navbar-brand">Diet Zone</div>
+        </Link>
         <ul className="navbar-nav">
           <li className="nav-item">
             <NavLink
