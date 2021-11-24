@@ -1,6 +1,28 @@
-# Dietzone Client Deployed link [click here]()
+# Dietzone Client Deployed link [click here](https://muthu-diet-client.netlify.app/)
 
 # Dietzone Server Deployed link [click here](https://github.com/mkandanmk7/DietZone-Application-Client)
+
+## Features:
+
+- User can edit their Details
+- User can Know about their Diet Plan.
+- User can Track their Diet Details.
+- User Can Know about food calories,fat details.
+- User can Delete added food details.
+- User can add Water level for required Diet plan.
+- User can Update Diet plan.
+- User can see the Food Recipe using Search bar.
+
+# Pages
+
+- Login Page
+- Register page
+- forgot password page
+- reset Password page
+- Home page
+- UserInfo page
+- User Update page
+- Recipe page
 
 ### Used Packages
 
