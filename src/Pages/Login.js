@@ -136,6 +136,28 @@ const Login = () => {
                         Forgot Password ?
                       </Link>
                     </p>
+                    <div style={{ textAlign: "center", marginTop: "10px" }}>
+                      <h3
+                        style={{
+                          color: "#ffcaad",
+                          fontWeight: "bold",
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        Use This Credentials for test Purpose
+                      </h3>
+                      <div
+                        style={{ color: "white", borderTop: "1px solid white" }}
+                      >
+                        <p>
+                          <b>Email</b> : muthutest789@gmail.com
+                        </p>
+                        <p>
+                          {" "}
+                          <b>Password</b> : test123
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
